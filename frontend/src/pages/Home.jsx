@@ -1,5 +1,15 @@
+import Hero from "../components/Hero";
+import LatestCollection from "../components/LatestCollection";
+
 function Home() {
-    return ( <div></div> );
+    return ( 
+    
+    <div>
+        <Hero />
+        <LatestCollection />
+    </div> 
+
+);
 }
 
 export default Home;
