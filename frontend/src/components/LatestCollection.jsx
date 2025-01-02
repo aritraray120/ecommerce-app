@@ -1,10 +1,18 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";
+
 
 function LatestCollection() {
 
     const { products } = useContext(ShopContext);
+    const [latestProducts, setLatestProducts] = useState([]);
+
+    useEffect(()=>{
+
+        setLatestProducts(products.slice(0,10));
+
+    },[]);
 
     return ( 
 
@@ -12,7 +20,10 @@ function LatestCollection() {
 
             <div className="text-center py-8 text-3xl">
                 <Title text1={'LATEST'} text2={'COLLECTIONS'} />
+                <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, blanditiis inventore! Nostrum.</p>
             </div>
+
+            {/* Rendering Products */}
 
         </div>
 
